@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { PageLayout } from '../components/PageLayout'
 import { Grid } from '@mui/material'
-import { getData } from '../utils'
+import { getData } from '../utils.ts'
 import { MyCard } from '../components/MyCard'
 import { MySpinner } from '../components/MySpinner'
 import { useState } from 'react'

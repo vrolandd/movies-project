@@ -1,5 +1,5 @@
 import React from 'react'
-import { img_300 } from '../utils'
+import { img_300 } from '../utils.ts'
 
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
