@@ -43,7 +43,7 @@ export const PageLayout = ({
         justifyContent="center"
         sx={{ paddingBottom: "60px" }}
       >
-        TODO insert ContentPagination here
+        <ContentPagination />
       </Box>
     </Container>
   );

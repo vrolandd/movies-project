@@ -1,15 +1,11 @@
-import React from 'react'
-import { PageLayout } from '../components/PageLayout.tsx'
-import { Grid } from '@mui/material'
+import React from "react";
+import { PageLayout } from "../components/PageLayout.tsx";
+import { Grid } from "@mui/material";
 
 export const TVSeries = () => {
   return (
-    <PageLayout title='TV Series' type='tv'>
-      <Grid>
-        {'...adatok'}
-      </Grid>
+    <PageLayout title="TV Series" type="tv">
+      <Grid>{"...adatok"}</Grid>
     </PageLayout>
-  )
-}
-
-
+  );
+};
