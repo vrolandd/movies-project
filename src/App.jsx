@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Movies } from "./pages/Movies.tsx";
-import { TVSeries } from "./pages/TVSeries.tsx";
-import { SearchPage } from "./pages/SearchPage.tsx";
-import { MyLayout } from "./components/MyLayout.tsx";
+import { Movies } from "./pages/Movies.jsx";
+import { TVSeries } from "./pages/TVSeries.jsx";
+import { SearchPage } from "./pages/SearchPage.jsx";
+import { MyLayout } from "./components/MyLayout.jsx";
 
 export default function App() {
   return (
