@@ -4,6 +4,7 @@ const urlSearch = "https://api.themoviedb.org/3/search/";
 
 const getTmdbMetadata = async function () {
     const resp = await fetch('/.netlify/functions/tmdb-metadata');
+    console.log(resp)
     const data = await resp.json();
     console.log('getTmdbMetadata data', data);
     return data;
@@ -11,7 +12,7 @@ const getTmdbMetadata = async function () {
 
 export const getData = async ({ queryKey }) => {
   //console.log("getData queryKey", queryKey); //ez egy tömb
-  const gotTmdbMetadata = getTmdbMetadata();
+  const gotTmdbMetadata = await getTmdbMetadata();
 
   let url =
     base_url +
@@ -31,7 +32,7 @@ export const getData = async ({ queryKey }) => {
 
 export const getGenres = async ({ queryKey }) => {
   console.log("getGenres queryKey", queryKey); //ez egy tömb 2 darab elemmel
-  const gotTmdbMetadata = getTmdbMetadata();
+  const gotTmdbMetadata = await getTmdbMetadata();
   //console.log("gotTmdbMetadata", gotTmdbMetadata);
 
   const url =
