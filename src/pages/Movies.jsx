@@ -25,10 +25,13 @@ export const Movies = (props) => {
       selectedGenres={selectedGenres}
       setSelectedGenres={setSelectedGenres}
     >
-      {/* TODO spin while loading */}
-      <Grid container spacing={2} justifyContent="center">
-        {data && data.results?.map((obj) => <MyCard key={obj.id} {...obj} />)}
-      </Grid>
+      {isLoading ? (
+        <MySpinner />
+      ) : (
+        <Grid container spacing={2} justifyContent="center">
+          {data && data.results?.map((obj) => <MyCard key={obj.id} {...obj} />)}
+        </Grid>
+      )}
     </PageLayout>
   );
 };
