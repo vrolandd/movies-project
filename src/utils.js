@@ -1,10 +1,12 @@
 const base_url = "https://api.themoviedb.org/3/discover/"; // help: https://developer.themoviedb.org/reference/
-const urlGenres = "https://api.themoviedb.org/3/genre/"; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
+const urlGenres =
+  "https://api.themoviedb.org/3/genre/"; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
+const urlSearch = "https://api.themoviedb.org/3/search/";
 
 const getTmdbMetadata = function () {
-  let apiKey = "eba18b08e1dc76d3e553640b0e530bcf"
-  return {apiKey: apiKey}
-}
+  let apiKey = "eba18b08e1dc76d3e553640b0e530bcf";
+  return { apiKey: apiKey };
+};
 
 export const getData = async ({ queryKey }) => {
   //console.log("getData queryKey", queryKey); //ez egy tömb
@@ -31,8 +33,20 @@ export const getGenres = async ({ queryKey }) => {
   const gotTmdbMetadata = getTmdbMetadata();
   //console.log("gotTmdbMetadata", gotTmdbMetadata);
 
-  const url = urlGenres + queryKey[1] + "/list" + "?api_key=" + gotTmdbMetadata.apiKey;
+  const url =
+    urlGenres + queryKey[1] + "/list" + "?api_key=" + gotTmdbMetadata.apiKey;
   //console.log("getGenres url", url);
+
+  const resp = await fetch(url);
+  return await resp.json();
+};
+
+export const getSearchData = async ({ queryKey }) => {
+  console.log("getSearchData queryKey", queryKey);
+  const gotTmdbMetadata = await getTmdbMetadata();
+
+  let url = `${urlSearch}${queryKey[1]}?api_key=${gotTmdbMetadata.apiKey}&query=${queryKey[2]}&page=${queryKey[3]}`;
+  console.log("getSearchData url", url);
 
   const resp = await fetch(url);
   return await resp.json();
