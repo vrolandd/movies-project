@@ -52,7 +52,7 @@ export const PageLayout = ({
         justifyContent="center"
         sx={{ paddingBottom: "60px", paddingTop: 5 }}
       >
-        {data?.total_pages > 1 ? <ContentPagination page={page} setPage={setPage} /> : null}
+        {data?.total_pages > 1 ? <ContentPagination page={page} setPage={setPage} total_pages={data?.total_pages} /> : null}
         
       </Box>
     </Container>
