@@ -7,7 +7,7 @@ export const ContentPagination = ({ page, setPage }) => {
     setPage(value)
   };
 
-  console.log(page)
+  //console.log(page)
 
   return (
     <Stack spacing={2}>

@@ -10,7 +10,7 @@ export const Genres = ({ type, selectedGenres, setSelectedGenres }) => {
 
   data && console.log(data.genres);
 
-  console.log(selectedGenres);
+  //console.log(selectedGenres);
 
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="center">
