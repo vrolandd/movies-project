@@ -1,12 +1,13 @@
 const base_url = "https://api.themoviedb.org/3/discover/"; // help: https://developer.themoviedb.org/reference/
-const urlGenres =
-  "https://api.themoviedb.org/3/genre/"; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
+const urlGenres = "https://api.themoviedb.org/3/genre/"; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
 const urlSearch = "https://api.themoviedb.org/3/search/";
 
-const getTmdbMetadata = function () {
-  let apiKey = "eba18b08e1dc76d3e553640b0e530bcf";
-  return { apiKey: apiKey };
-};
+const getTmdbMetadata = async function () {
+    const resp = await fetch('/.netlify/functions/tmdb-metadata');
+    const data = await resp.json();
+    console.log('getTmdbMetadata data', data);
+    return data;
+}
 
 export const getData = async ({ queryKey }) => {
   //console.log("getData queryKey", queryKey); //ez egy tömb
