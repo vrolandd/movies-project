@@ -10,7 +10,7 @@ export const PageLayout = ({
   type,
   selectedGenres,
   setSelectedGenres,
-  children
+  children,
 }) => {
   return (
     <Container
@@ -42,9 +42,9 @@ export const PageLayout = ({
       <Box
         display="flex"
         justifyContent="center"
-        sx={{ paddingBottom: "60px" }}
+        sx={{ paddingBottom: "60px", paddingTop: 5 }}
       >
-        <ContentPagination />
+        <ContentPagination page={page} setPage={setPage} />
       </Box>
     </Container>
   );
