@@ -11,6 +11,7 @@ export const PageLayout = ({
   selectedGenres,
   setSelectedGenres,
   children,
+  data
 }) => {
   return (
     <Container
@@ -36,7 +37,14 @@ export const PageLayout = ({
       >
         {title}
       </Typography>
-      <Genres type={type} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}/>
+      {title == "Movies" || title == "TV Series" ? (
+        <Genres
+          type={type}
+          selectedGenres={selectedGenres}
+          setSelectedGenres={setSelectedGenres}
+        />
+      ) : null}
+
       <Box>{children}</Box>
       {/*Oldallapozó*/}
       <Box
@@ -44,7 +52,8 @@ export const PageLayout = ({
         justifyContent="center"
         sx={{ paddingBottom: "60px", paddingTop: 5 }}
       >
-        <ContentPagination page={page} setPage={setPage} />
+        {data?.total_pages > 1 ? <ContentPagination page={page} setPage={setPage} /> : null}
+        
       </Box>
     </Container>
   );

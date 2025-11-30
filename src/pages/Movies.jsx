@@ -31,6 +31,7 @@ export const Movies = (props) => {
       type="movie"
       selectedGenres={selectedGenres}
       setSelectedGenres={setSelectedGenres}
+      data={data}
     >
       {isLoading ? (
         <MySpinner />
