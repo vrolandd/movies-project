@@ -12,7 +12,7 @@ export const Movies = (props) => {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
-  console.log(page);
+  //console.log(page);
 
   useEffect(() => { 
     async function fetchData() {
