@@ -23,6 +23,8 @@ export const MyCard = ({
   release_date,
   vote_average,
   poster_path,
+  name,
+  first_air_date
 }) => {
   return (
     <Card sx={{ maxWidth: 400, maxHeight: 700 }}>
@@ -31,17 +33,17 @@ export const MyCard = ({
           component="img"
           image={`${img_500}${poster_path}`}
           sx={{ maxWidth: 400, maxHeight: 200 }}
-          alt={title}
-          title={title}
+          alt={title || name}
+          title={title || name}
         ></CardMedia>
         <Typography variant="h5" sx={{ paddingTop: 2, paddingBottom: 2 }}>
-          {title}
+          {title || name}
         </Typography>
         <Typography variant="body2" sx={{ fontSize: 12, paddingBottom: 2 }}>
           {overview}
         </Typography>
         <div className="flex justify-between">
-          <Typography>{release_date}</Typography>
+          <Typography>{release_date || first_air_date}</Typography>
           <Typography>{vote_average}/10</Typography>
         </div>
       </CardContent>
