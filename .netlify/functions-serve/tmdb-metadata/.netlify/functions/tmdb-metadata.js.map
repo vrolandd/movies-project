@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["file:///D:/Marci%20-%20Minden/Sulis/20251125_movies_db/movies-project/.netlify/functions/tmdb-metadata.cjs"],
+  "sourceRoot": "C:/Users/36205/AppData/Local/Temp/tmp-18244-yOOgH1acE4Wu",
+  "sourcesContent": ["async function tmdbMetadata () {\r\n  const apiKey = process?.env?.VITE_TMDB_API_KEY;\r\n  // respond with {apiKey, error}\r\n  return {\r\n    statusCode: 200,\r\n    body: JSON.stringify({ apiKey: apiKey, error: null }),\r\n  };\r\n};\r\n\r\nmodule.exports = { tmdbMetadata, handler: tmdbMetadata };\r\n"],
+  "mappings": ";AAAA,eAAe,eAAgB;AAC7B,QAAM,SAAS,SAAS,KAAK;AAE7B,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,EAAE,QAAgB,OAAO,KAAK,CAAC;AAAA,EACtD;AACF;AAEA,OAAO,UAAU,EAAE,cAAc,SAAS,aAAa;",
+  "names": []
+}

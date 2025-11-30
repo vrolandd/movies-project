@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Kecskemét",
+			"country": {
+				"code": "HU",
+				"name": "Hungary"
+			},
+			"subdivision": {
+				"code": "BK",
+				"name": "Bács-Kiskun"
+			},
+			"timezone": "Europe/Budapest",
+			"latitude": 46.905,
+			"longitude": 19.6958,
+			"postalCode": "6000"
+		},
+		"timestamp": 1764526404465
+	}
+}
