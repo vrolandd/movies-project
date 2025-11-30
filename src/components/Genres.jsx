@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getGenres } from "../utils.ts";
+import { getGenres } from "../utils.js";
 import { Stack } from "@mui/material";
-import { SingleChip } from "./SingleChip.tsx";
+import { SingleChip } from "./SingleChip.jsx";
 
 export const Genres = ({ type, selectedGenres, setSelectedGenres }) => {
   const [data, setData] = useState(null);
