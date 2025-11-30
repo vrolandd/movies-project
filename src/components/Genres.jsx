@@ -6,9 +6,16 @@ import { SingleChip } from "./SingleChip.jsx";
 export const Genres = ({ type, selectedGenres, setSelectedGenres }) => {
   const [data, setData] = useState(null);
 
-  // TODO use getGenres
+  useEffect(() => {
+    async function fetchData() {
+      setData(await getGenres({ queryKey: ["genres", type] }));
+    }
+    fetchData();
+  }, [selectedGenres]);
 
-  data && console.log(data.genres);
+  //console.log(data)
+
+  //data && console.log(data.genres);
 
   //console.log(selectedGenres);
 

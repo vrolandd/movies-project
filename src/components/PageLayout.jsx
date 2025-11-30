@@ -36,7 +36,7 @@ export const PageLayout = ({
       >
         {title}
       </Typography>
-      <Genres todo="set props" />
+      <Genres type={type} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}/>
       <Box>{children}</Box>
       {/*Oldallapozó*/}
       <Box

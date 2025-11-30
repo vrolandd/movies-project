@@ -1,5 +1,5 @@
 const base_url = "https://api.themoviedb.org/3/discover/"; // help: https://developer.themoviedb.org/reference/
-const urlGenres = ``; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
+const urlGenres = "https://api.themoviedb.org/3/genre/"; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
 
 const getTmdbMetadata = function () {
   let apiKey = "eba18b08e1dc76d3e553640b0e530bcf"
@@ -7,7 +7,7 @@ const getTmdbMetadata = function () {
 }
 
 export const getData = async ({ queryKey }) => {
-  console.log("getData queryKey", queryKey); //ez egy tömb
+  //console.log("getData queryKey", queryKey); //ez egy tömb
   const gotTmdbMetadata = getTmdbMetadata();
 
   let url =
@@ -20,7 +20,7 @@ export const getData = async ({ queryKey }) => {
   if (queryKey[3].length != 0)
     //itt szűrünk
     url += "&with_genres=" + queryKey[3].join(",");
-  console.log("getData url", url);
+  //console.log("getData url", url);
 
   const resp = await fetch(url);
   return await resp.json();
@@ -29,12 +29,12 @@ export const getData = async ({ queryKey }) => {
 export const getGenres = async ({ queryKey }) => {
   console.log("getGenres queryKey", queryKey); //ez egy tömb 2 darab elemmel
   const gotTmdbMetadata = getTmdbMetadata();
-  console.log("gotTmdbMetadata", gotTmdbMetadata);
+  //console.log("gotTmdbMetadata", gotTmdbMetadata);
 
-  const url = urlGenres + queryKey[1] + "/list";
-  console.log("getGenres url", url);
+  const url = urlGenres + queryKey[1] + "/list" + "?api_key=" + gotTmdbMetadata.apiKey;
+  //console.log("getGenres url", url);
 
-  const resp = "TODO fetch url with apiKey";
+  const resp = await fetch(url);
   return await resp.json();
 };
 
