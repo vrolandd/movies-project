@@ -14,7 +14,14 @@ export const Movies = (props) => {
 
   console.log(page);
 
-  // TODO use getData
+  useEffect(() => { 
+    async function fetchData() {
+      setLoading(true)
+      setData(await getData({queryKey:['movies','movie',page,selectedGenres]}))
+      setLoading(false)
+    }
+    fetchData()
+  }, [page, selectedGenres])
 
   return (
     <PageLayout

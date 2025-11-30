@@ -1,8 +1,9 @@
-const base_url = "https://api.themoviedb.org/3/movie"; // help: https://developer.themoviedb.org/reference/
-const urlGenres = `${base_url}/list`; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
+const base_url = "https://api.themoviedb.org/3/discover/"; // help: https://developer.themoviedb.org/reference/
+const urlGenres = ``; /*${type}/list?api_key=${import.meta.env.VITE_API_KEY}*/
 
 const getTmdbMetadata = function () {
-  // TODO fetch tmdb-metadata
+  let apiKey = "eba18b08e1dc76d3e553640b0e530bcf"
+  return {apiKey: apiKey}
 }
 
 export const getData = async ({ queryKey }) => {
@@ -21,7 +22,7 @@ export const getData = async ({ queryKey }) => {
     url += "&with_genres=" + queryKey[3].join(",");
   console.log("getData url", url);
 
-  const resp = "TODO fetch url with apiKey";
+  const resp = await fetch(url);
   return await resp.json();
 };
 

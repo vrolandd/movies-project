@@ -10,6 +10,7 @@ export const PageLayout = ({
   type,
   selectedGenres,
   setSelectedGenres,
+  children
 }) => {
   return (
     <Container
@@ -36,7 +37,7 @@ export const PageLayout = ({
         {title}
       </Typography>
       <Genres todo="set props" />
-      <Box>TODO insert children here</Box>
+      <Box>{children}</Box>
       {/*Oldallapozó*/}
       <Box
         display="flex"
