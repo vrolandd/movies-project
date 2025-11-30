@@ -12,7 +12,6 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -26,19 +25,25 @@ export const MyCard = ({
   poster_path,
 }) => {
   return (
-    <Card sx={{ maxWidth: 400, maxHeight: 500 }}>
+    <Card sx={{ maxWidth: 400, maxHeight: 700 }}>
       <CardContent>
         <CardMedia
           component="img"
           image={`${img_500}${poster_path}`}
-          sx={{maxWidth: 200}}
+          sx={{ maxWidth: 400, maxHeight: 200 }}
+          alt={title}
+          title={title}
         ></CardMedia>
-        <CardHeader variant="h5" component="div">
+        <Typography variant="h5" sx={{ paddingTop: 2, paddingBottom: 2 }}>
           {title}
-        </CardHeader>
-        <Typography variant="body2" sx={{fontSize: 12}}>{overview}</Typography>
-        <Typography>{release_date}</Typography>
-        <Typography>{vote_average}</Typography>
+        </Typography>
+        <Typography variant="body2" sx={{ fontSize: 12, paddingBottom: 2 }}>
+          {overview}
+        </Typography>
+        <div className="flex justify-between">
+          <Typography>{release_date}</Typography>
+          <Typography>{vote_average}/10</Typography>
+        </div>
       </CardContent>
     </Card>
   );
